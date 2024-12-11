@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: embedded-mongodb
+  labels:
+    app: embedded-mongodb
+spec:
+  type: ClusterIP
+  selector:
+    app: embedded-mongodb
+  ports:
+    - name: tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: embedded-mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: embedded-mongodb
+  template:
+    metadata:
+      labels:
+        app: embedded-mongodb
+        version: v1
+    spec:
+      containers:
+      - name: embedded-mongodb
+        image: embedded-mongodb
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
