@@ -4,11 +4,5 @@ import jakarta.nosql.Column;
 import jakarta.nosql.Embeddable;
 
 @Embeddable(Embeddable.EmbeddableType.GROUPING)
-public class Category {
-
-    @Column
-    private String name;
-
-    @Column
-    private String description;
+public record Category(@Column String name, @Column String description) {
 }
