@@ -1,4 +1,4 @@
-package org.soujava.samples.embedded.mongodb;
+package org.soujava.samples.mongodb.products;
 
 public class Message {
 

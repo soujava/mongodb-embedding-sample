@@ -1,5 +1,5 @@
 
-package org.soujava.samples.embedded.mongodb;
+package org.soujava.samples.mongodb.products;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;

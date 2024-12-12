@@ -1,5 +1,5 @@
 
-package org.soujava.samples.embedded.mongodb;
+package org.soujava.samples.mongodb.products;
 
 import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Counted;

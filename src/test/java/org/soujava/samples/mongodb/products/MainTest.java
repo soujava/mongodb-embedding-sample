@@ -1,5 +1,5 @@
 
-package org.soujava.samples.embedded.mongodb;
+package org.soujava.samples.mongodb.products;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.client.WebTarget;
