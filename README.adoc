@@ -1,6 +1,12 @@
-= embedded-mongodb
+= Jakarta NoSQL with MongoDB: Exploring Embedded Documents and Flexibility
 
-Sample Helidon MP project that includes multiple REST operations for managing products.
+This project demonstrates the use of Jakarta NoSQL with MongoDB, leveraging the flexibility of Helidon MP to build a sample RESTful API for managing products. The focus is on showcasing how MongoDB's embedded document model works in conjunction with Jakarta NoSQL, emphasizing:
+
+- The simplicity of modeling entities with embedded types.
+- Flexibility in handling relationships such as `One-to-One`, `One-to-Many`, and `Many-to-Many`.
+- Dynamic schemas and their adaptability to real-world use cases.
+
+The project serves as a practical guide for developers to understand how to use Jakarta NoSQL annotations to map MongoDB documents, demonstrating MongoDB's unique capabilities for handling flexible and embedded data structures.
 
 == Build and Run
 
@@ -46,6 +52,14 @@ curl -X GET http://localhost:8080/products/{id}
 # Delete a product by ID
 curl -X DELETE http://localhost:8080/products/{id}
 ----
+
+== Project Goals
+
+This project highlights:
+- **Jakarta NoSQL Integration with MongoDB**: Demonstrating how Jakarta NoSQL simplifies database interactions using annotations and abstractions.
+- **MongoDB Embedded Documents**: Showcasing the use of embedded types (`Manufacturer` and `Category`) to take advantage of MongoDB’s schema-less design.
+- **Flexibility of MongoDB**: Illustrating how MongoDB handles arrays, embedded objects, and relationships without requiring a rigid schema.
+- **Helidon MP as a Lightweight Framework**: Using Helidon MP for building modern REST APIs with minimal configuration and overhead.
 
 == Try Health
 
