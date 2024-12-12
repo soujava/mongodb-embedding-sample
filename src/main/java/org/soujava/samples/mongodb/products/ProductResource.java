@@ -4,6 +4,7 @@ import jakarta.data.Order;
 import jakarta.data.Sort;
 import jakarta.data.page.PageRequest;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
@@ -27,6 +28,7 @@ public class ProductResource {
 
     private final ProductRepository repository;
 
+    @Inject
     public ProductResource(ProductRepository repository) {
         this.repository = repository;
     }
@@ -47,6 +49,7 @@ public class ProductResource {
 
     @POST
     public Product insert(Product product) {
+        LOGGER.info("The product will be saved: " + product);
         return repository.save(product);
     }
 

@@ -5,16 +5,9 @@ import jakarta.nosql.Column;
 import jakarta.nosql.Embeddable;
 import org.soujava.samples.mongodb.products.infra.FieldVisibilityStrategy;
 
+
 @Embeddable(Embeddable.EmbeddableType.GROUPING)
 @JsonbVisibility(FieldVisibilityStrategy.class)
-public class Manufacturer {
+public record Manufacturer(@Column String name, @Column String address, @Column String contactNumber) {
 
-    @Column
-    private String name;
-
-    @Column
-    private String address;
-
-    @Column
-    private String contactNumber;
 }
