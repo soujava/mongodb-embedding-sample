@@ -1,6 +1,6 @@
 = embedded-mongodb
 
-Sample Helidon MP project that includes multiple REST operations.
+Sample Helidon MP project that includes multiple REST operations for managing products.
 
 == Build and Run
 
@@ -16,23 +16,35 @@ java -jar target/embedded-mongodb.jar
 Basic:
 [source,bash]
 ----
-curl -X GET http://localhost:8080/simple-greet
-Hello World!
+curl -X GET http://localhost:8080/products
 ----
 
 JSON:
 [source,bash]
 ----
-curl -X GET http://localhost:8080/greet
-{"message":"Hello World!"}
+# Create a product
+curl -X POST -H "Content-Type: application/json" -d '{
+    "name": "Smartphone",
+    "manufacturer": {
+        "name": "Tech Co",
+        "address": "1234 Tech Street",
+        "contactNumber": "+123456789"
+    },
+    "tags": ["mobile", "smart"],
+    "categories": [
+        {"name": "Electronics", "description": "Devices and gadgets."},
+        {"name": "Gadgets", "description": "Small useful tools and devices."}
+    ]
+}' http://localhost:8080/products
 
-curl -X GET http://localhost:8080/greet/Joe
-{"message":"Hello Joe!"}
+# Get all products (paginated)
+curl -X GET http://localhost:8080/products?page=1&size=10
 
-curl -X PUT -H "Content-Type: application/json" -d '{"greeting" : "Hola"}' http://localhost:8080/greet/greeting
+# Get a specific product by ID
+curl -X GET http://localhost:8080/products/{id}
 
-curl -X GET http://localhost:8080/greet/Jose
-{"message":"Hola Jose!"}
+# Delete a product by ID
+curl -X DELETE http://localhost:8080/products/{id}
 ----
 
 == Try Health
