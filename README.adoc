@@ -1,4 +1,5 @@
 = Jakarta NoSQL with MongoDB: Exploring Embedded Documents and Flexibility
+:toc: auto
 
 This project demonstrates the use of Jakarta NoSQL with MongoDB, leveraging the flexibility of Helidon MP to build a sample RESTful API for managing products. The focus is on showcasing how MongoDB's embedded document model works in conjunction with Jakarta NoSQL, emphasizing:
 
