@@ -4,7 +4,7 @@
 # Maven
 target/
 .m2/
-
+.idea
 # Package Files #
 *.jar
 *.war
